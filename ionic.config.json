@@ -1,0 +1,8 @@
+{
+  "name": "Weatherly",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "9aeb7ef9"
+}
