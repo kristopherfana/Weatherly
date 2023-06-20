@@ -1,26 +1,70 @@
-/*
- * App Global CSS
- * ----------------------------------------------------------------------------
- * Put style rules here that you want to apply globally. These styles are for
- * the entire app and not just one component. Additionally, this file can be
- * used as an entry point to import other CSS/Sass files to be included in the
- * output CSS.
- * For more information on global stylesheets, visit the documentation:
- * https://ionicframework.com/docs/layout/global-stylesheets
- */
+@import "../src/theme/variables";
+@import "../src/app/pages/welcome/welcome.page";
+@import "../src/app/app.component";
+/* Importing Bootstrap SCSS file. */
+@import "bootstrap/scss/bootstrap";
 
-/* Core CSS required for Ionic components to work properly */
-@import "@ionic/angular/css/core.css";
-
-/* Basic CSS for apps built with Ionic */
-@import "@ionic/angular/css/normalize.css";
-@import "@ionic/angular/css/structure.css";
-@import "@ionic/angular/css/typography.css";
-@import '@ionic/angular/css/display.css';
-
-/* Optional CSS utils that can be commented out */
-@import "@ionic/angular/css/padding.css";
-@import "@ionic/angular/css/float-elements.css";
-@import "@ionic/angular/css/text-alignment.css";
-@import "@ionic/angular/css/text-transformation.css";
-@import "@ionic/angular/css/flex-utils.css";
+* {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+body {
+  line-height: 1.2rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.display-1,
+.display-2 {
+  color: $white;
+}
+.global-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  animation: slide-up 1s ease-in-out forwards 2s;
+}
+.global-loader::before {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(20px);
+}
+.global-loader > h1 {
+  opacity: 1;
+  animation: fade-out 3s ease-in-out forwards;
+}
+@keyframes fade-out {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes slide-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+svg {
+  fill: currentColor;
+}
